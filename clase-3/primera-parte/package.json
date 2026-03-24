@@ -1,0 +1,12 @@
+{
+  "name": "clase-3",
+  "version": "2.0.0",
+  "description": "Clase 3, introducción a node y Typescript",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node app.js",
+    "test": "node test.js",
+    "build": "node production.js"
+  }
+}

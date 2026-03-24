@@ -25,12 +25,19 @@ const Contacto = () => {
     setMensaje(evento.target.value)
   }
 
+  const volverAlFormulario = () => {
+    setConfirmacion(null)
+  }
+
   return (
     <section>
       <h2>Contactanos</h2>
       {
         confirmacion
-          ? <p>{confirmacion}</p>
+          ? <div>
+            <p>{confirmacion}</p>
+            <button onClick={volverAlFormulario}>Enviar otro mensaje</button>
+          </div>
           : <form onSubmit={manejadorDeForm}>
             <input
               type="email"

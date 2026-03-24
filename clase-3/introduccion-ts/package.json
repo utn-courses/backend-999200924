@@ -1,0 +1,23 @@
+{
+  "name": "ts-introduccion",
+  "version": "1.0.0",
+  "description": "pequeño proyecto para aprender ts",
+  "keywords": [
+    "typescrpt",
+    "backend",
+    "node",
+    "javascript",
+    "npm"
+  ],
+  "license": "ISC",
+  "author": "gabrielalberini",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "ts-node-dev app.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.2"
+  }
+}
