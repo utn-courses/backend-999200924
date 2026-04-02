@@ -36,6 +36,14 @@ const area = (base, altura) => {
   return baseToNumber * alturaToNumber;
 };
 
+// ar -5 hs al horario es
+const conversor = () => {
+  const horaEnArg = new Date()
+  const horaEnEs = horaEnArg.getHours() + 5
+  const minutosEnEs = horaEnArg.getMinutes()
+  return `${horaEnEs}:${minutosEnEs}`
+}
+
 const operacion = process.argv[2]
 let resultado = 0
 let mensaje = ""
@@ -56,6 +64,10 @@ switch (operacion) {
     } else {
       mensaje = `El area calculada de base(${n1})*altura(${n2})=${resultado}`
     }
+    break
+  case "conversor":
+    const horaDeEs = conversor()
+    mensaje = `La hora actual en españa es: ${horaDeEs}`
     break
   default:
     mensaje = `
