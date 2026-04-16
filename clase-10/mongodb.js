@@ -1,0 +1,67 @@
+import mongoose from "mongoose"
+
+// esquema → Schema
+// tipar la data de cada usuario
+// {username, email, password}
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
+},
+  {
+    timestamps: true,
+    versionKey: false
+  }
+)
+
+// modelo → model
+// para administrar usuarios crearé el model de User
+const User = mongoose.model("User", userSchema)
+
+const getUsers = async () => {
+  try {
+    const users = await User.find({})
+    return users
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const createUser = async (username, email, password) => {
+  if (!username || !email || !password) {
+    return "Debes enviar la información necesaria."
+  }
+
+  try {
+    const user = new User({ username, email, password })
+    user.save()
+    return "Usuario creado con éxito."
+  } catch (error) {
+    console.log(error)
+    process.exit(1)
+  }
+}
+
+const deleteUser = async (id) => {
+  if (!id) {
+    return "El id es requerido para borrar un usuario"
+  }
+  try {
+    const deletedUser = await User.findByIdAndDelete(id)
+
+    if (!deletedUser) {
+      return "El usuario no se encuentra."
+    }
+
+    return "Usuario borrado con éxito."
+  } catch (error) {
+    console.log(error
+    )
+  }
+}
+
+const updateUser = async (id, updates) => { }
+
+export { getUsers, createUser, deleteUser, updateUser }
+
+
