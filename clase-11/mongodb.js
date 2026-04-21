@@ -33,11 +33,17 @@ const createUser = async (username, email, password) => {
   }
 
   try {
+    // const existingUser = await User.findOne({ email })
+    // if (existingUser) {
+    //   return "El email ya está registrado."
+    // }
     const user = new User({ username, email, password })
-    user.save()
+    await user.save()
     return "Usuario creado con éxito."
   } catch (error) {
-    console.log(error)
+    if (error.code === 11000) {
+      return "El email ya está registrado."
+    }
     process.exit(1)
   }
 }
@@ -47,6 +53,7 @@ const deleteUser = async (id) => {
   if (!id) {
     return "El id es requerido para borrar un usuario"
   }
+
   try {
     const deletedUser = await User.findByIdAndDelete(id)
 
@@ -56,8 +63,10 @@ const deleteUser = async (id) => {
 
     return "Usuario borrado con éxito."
   } catch (error) {
-    console.log(error
-    )
+    if (error.name === "CastError") {
+      return "El ID debería ser un ID de MongoDB válido."
+    }
+    console.log(error)
   }
 }
 
@@ -73,6 +82,6 @@ const updateUser = async (id, updates) => {
   }
 }
 
-export { getUsers, createUser, deleteUser, updateUser }
+export { getUsers, createUser, deleteUser, updateUser, User }
 
 
