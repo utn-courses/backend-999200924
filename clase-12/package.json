@@ -1,0 +1,21 @@
+{
+  "name": "clase-12",
+  "version": "1.0.0",
+  "description": "Un  CLI para adminisitrar peliculas",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "movies",
+    "utn"
+  ],
+  "author": "gabi@gmail.com",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mongoose": "^9.5.0"
+  }
+}

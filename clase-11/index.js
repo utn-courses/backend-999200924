@@ -37,7 +37,7 @@ const main = async () => {
         break
       }
 
-      if (!username.length < 4 && !username.length > 20) {
+      if (username.length < 4 || username.length > 20) {
         resultado = "El username debe tener al menos 4 caracteres y no más de 20."
         break
       }
@@ -66,7 +66,7 @@ const main = async () => {
         break
       }
 
-      if (!username.length < 4 && !username.length > 20) {
+      if (username.length < 4 || username.length > 20) {
         resultado = "El username debe tener al menos 4 caracteres y no más de 20."
         break
       }
