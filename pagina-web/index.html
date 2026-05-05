@@ -8,6 +8,21 @@
 </head>
 
 <body>
+  <h2>Agregar producto</h2>
+
+  <form id="productForm">
+    <label>
+      Nombre:
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Precio:
+      <input type="number" name="price" required>
+    </label>
+
+    <button type="submit">Agregar</button>
+  </form>
   <h1>Lista de productos</h1>
 
   <ul></ul>
@@ -16,13 +31,14 @@
 <script>
   // GET → http://localhost:40000/products
   const fetchingProducts = async () => {
-    const response = await fetch("http://localhost:40000/products", { method: "GET" })
+    const response = await fetch("http://localhost:3001/products", { method: "GET" })
 
     if (!response.ok) {
       alert("Error al traer la data")
     }
 
     const data = await response.json()
+    console.log(data)
 
     const productsList = document.querySelector("ul")
 
@@ -34,6 +50,21 @@
   }
 
   fetchingProducts()
+
+  const form = document.getElementById("productForm")
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(form)
+
+    const data = {
+      name: formData.get("name"),
+      price: formData.get("price")
+    }
+
+    console.log(JSON.stringify(data))
+  })
 
 </script>
 
