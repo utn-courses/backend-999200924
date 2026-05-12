@@ -1,0 +1,21 @@
+{
+  "name": "api-users",
+  "version": "1.0.0",
+  "description": "A simple api to manage users",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "node",
+    "http",
+    "api",
+    "users"
+  ],
+  "author": "gabia733@gmail.com",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^3.0.3"
+  }
+}
