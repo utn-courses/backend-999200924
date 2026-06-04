@@ -1,6 +1,8 @@
 import { User } from "../models/UserModel.js"
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
+import { config } from "dotenv"
+config()
 
 const register = async (req, res) => {
   try {
@@ -70,7 +72,7 @@ const login = async (req, res) => {
 
     // TOKEN JWT → Json Web Token → string
     const payload = { id: foundUser._id, username: foundUser.username, email: foundUser.email }
-    const secretKey = "contraseñasupersegurayprivadaquenadietienequeconocer"
+    const secretKey = process.env.JWT_SECRET
 
     const token = jwt.sign(payload, secretKey, { expiresIn: "1h" })
 
