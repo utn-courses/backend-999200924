@@ -3,11 +3,20 @@ import { connectDb } from './config/mongoDbConnection.js';
 import { ProductRouter } from './routes/productRouter.js';
 import { AuthRouter } from './routes/authRouter.js';
 import { authMiddleware } from './middlewares/authMiddleware.js';
+import cors from "cors"
+import { config } from 'dotenv';
+config()
 
-process.loadEnvFile()
+const entorno = "dev"
+let PORT = 3000
+
+if (entorno === "dev") {
+  PORT = process.env.PORT
+}
 
 const server = express()
 server.use(express.json())
+server.use(cors())
 
 server.get("/", (req, res) => {
   res.status(200).json({
@@ -15,7 +24,6 @@ server.get("/", (req, res) => {
     message: "API REST con Express y MongoDB"
   })
 })
-
 server.use("/products", authMiddleware, ProductRouter)
 server.use("/auth", AuthRouter)
 
