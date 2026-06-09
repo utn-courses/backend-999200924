@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kivo | Tecnología que impulsa el futuro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter:wght@400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --color-principal: #007BFF;
+      --color-secundario: #00E0FF;
+      --color-neutro: #1C1C1C;
+      --color-apoyo: #FFFFFF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-neutro);
+      color: var(--color-apoyo);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .icon {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #0F0F0F;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="logo" width="180">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis pariatur ullam repellat error maxime,
+      repellendus, molestiae perferendis amet expedita fugiat veniam vitae aliquam magnam culpa tempore eligendi quo
+      numquam optio inventore soluta eaque? Eos earum aliquam, error quos quis maiores consequuntur, distinctio quo
+      doloremque nisi eum dolore recusandae, sint quod odio quibusdam. Dignissimos, ratione vitae! Nisi laboriosam
+      doloremque, molestiae earum, velit hic quis quas libero corrupti nostrum harum dolorum quod molestias delectus
+      corporis cumque, temporibus praesentium facere quia totam soluta porro quibusdam labore consectetur? Quia ducimus
+      debitis enim, iure aliquam aperiam eveniet, facilis itaque, et illum voluptatum vero sequi accusantium.</p>
+  </header>
+
+  <section>
+    <h2>Explorá nuestra tecnología</h2>
+    <div class="grid">
+      <div class="icon">📱</div>
+      <div class="icon">🛒</div>
+      <div class="icon">🛡️</div>
+      <div class="icon">💻</div>
+      <div class="icon">⚙️</div>
+      <div class="icon">🌐</div>
+      <div class="icon">🔋</div>
+      <div class="icon">🤖</div>
+      <div class="icon">☁️</div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Kivo — Tecnología que impulsa el futuro
+  </footer>
+</body>
+
+</html>
