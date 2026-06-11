@@ -29,7 +29,7 @@ server.use("/auth", AuthRouter)
 
 server.listen(PORT, () => {
   connectDb()
-  console.log(`Servidor en escucha por el puerto http://localhost:${PORT}`)
+  console.log(`✅ Servidor en escucha por el puerto http://localhost:${PORT}`)
 })
 
 export { server }
